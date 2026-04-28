@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Cart</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart</title>
+
+    <meta name="description" content="View selected courses in your cart.">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="canonical" href="https://psdeekshitha17-code.github.io/nodejs-seo/cart.html">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-    <h2>Node.js Guide</h2>
-    <div>
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
+    <nav>
+        <h2>Node.js Guide</h2>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+        </div>
+    </nav>
+
+    <div class="cart-container">
+
+        <h1>🛒 Your Cart</h1>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-summary">
+            <h2>Total: ₹<span id="total">0</span></h2>
+            <button class="btn" onclick="goToPayment()">Proceed to Pay</button>
+        </div>
+
     </div>
-</nav>
 
-<div class="cart-container">
+    <script>
 
-    <h1>🛒 Your Cart</h1>
+        // Load cart
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartDiv = document.getElementById("cart-items");
+            let total = 0;
 
-    <div id="cart-items"></div>
+            if (cart.length === 0) {
+                cartDiv.innerHTML = "<p>Your cart is empty 😔</p>";
+                document.getElementById("total").innerText = "0";
+                return;
+            }
 
-    <div class="cart-summary">
-        <h2>Total: ₹<span id="total">0</span></h2>
-        <button class="btn" onclick="goToPayment()">Proceed to Pay</button>
-    </div>
+            cartDiv.innerHTML = "";
 
-</div>
+            cart.forEach((item, index) => {
 
-<script>
+                total += item.price;
 
-// Load cart
-function loadCart() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let cartDiv = document.getElementById("cart-items");
-    let total = 0;
-
-    if(cart.length === 0){
-        cartDiv.innerHTML = "<p>Your cart is empty 😔</p>";
-        document.getElementById("total").innerText = "0";
-        return;
-    }
-
-    cartDiv.innerHTML = "";
-
-    cart.forEach((item, index) => {
-
-        total += item.price;
-
-        cartDiv.innerHTML += `
+                cartDiv.innerHTML += `
             <div class="cart-card">
                 <div>
                     <h3>${item.title}</h3>
@@ -57,35 +68,35 @@ function loadCart() {
                 <button class="remove-btn" onclick="removeItem(${index})">❌</button>
             </div>
         `;
-    });
+            });
 
-    document.getElementById("total").innerText = total;
-}
+            document.getElementById("total").innerText = total;
+        }
 
-// Remove item
-function removeItem(index) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    loadCart();
-}
+        // Remove item
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
 
-// Go to payment
+        // Go to payment
 
-function loadCart() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let total = 0;
-    let html = "";
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let total = 0;
+            let html = "";
 
-    if(cart.length === 0){
-        document.getElementById("cart-items").innerHTML = "<p>Cart is empty 😔</p>";
-        return;
-    }
+            if (cart.length === 0) {
+                document.getElementById("cart-items").innerHTML = "<p>Cart is empty 😔</p>";
+                return;
+            }
 
-    cart.forEach((item, index) => {
-        total += item.price;
+            cart.forEach((item, index) => {
+                total += item.price;
 
-        html += `
+                html += `
         <div class="cart-card">
             <div>
                 <h3>${item.title}</h3>
@@ -93,40 +104,41 @@ function loadCart() {
             </div>
             <button class="remove-btn" onclick="removeItem(${index})">✖</button>
         </div>`;
-    });
+            });
 
-    document.getElementById("cart-items").innerHTML = html;
-    document.getElementById("total").innerText = total;
-}
+            document.getElementById("cart-items").innerHTML = html;
+            document.getElementById("total").innerText = total;
+        }
 
-function removeItem(index) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    loadCart();
-}
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
 
-function goToPayment() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        function goToPayment() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    if(cart.length === 0){
-    cartDiv.innerHTML = `
+            if (cart.length === 0) {
+                cartDiv.innerHTML = `
         <div style="text-align:center;">
             <h2>🛒 Cart is Empty</h2>
             <p>Add courses to continue</p>
             <a href="courses.html" class="btn">Browse Courses</a>
         </div>
     `;
-    return;
-}
+                return;
+            }
 
-    window.location.href = "payment.html";
-}
+            window.location.href = "payment.html";
+        }
 
-loadCart();
+        loadCart();
 
 
-</script>
+    </script>
 
 </body>
+
 </html>

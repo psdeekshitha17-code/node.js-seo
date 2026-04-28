@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Success</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Successful</title>
+
+    <meta name="description" content="Your payment was successful.">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="canonical" href="https://psdeekshitha17-code.github.io/nodejs-seo/success.html">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="page">
+    <div class="page">
 
-<div class="box" style="text-align:center">
+        <div class="box" style="text-align:center">
 
-<h1>✅ Payment Successful</h1>
+            <h1>✅ Payment Successful</h1>
 
-<p id="user"></p>
+            <p id="user"></p>
 
-<p>Your course has been unlocked 🎉</p>
+            <p>Your course has been unlocked 🎉</p>
 
-<a href="courses.html" class="btn">Go Back</a>
+            <a href="courses.html" class="btn">Go Back</a>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<script>
+    <script>
 
-let user = JSON.parse(localStorage.getItem("user"));
+        let user = JSON.parse(localStorage.getItem("user"));
 
-if(user){
-    document.getElementById("user").innerText =
-    "Thank you " + user.name + " (" + user.email + ")";
-} else {
-    document.getElementById("user").innerText =
-    "Payment completed successfully";
-}
+        if (user) {
+            document.getElementById("user").innerText =
+                "Thank you " + user.name + " (" + user.email + ")";
+        } else {
+            document.getElementById("user").innerText =
+                "Payment completed successfully";
+        }
 
-</script>
+    </script>
 
 </body>
+
 </html>

@@ -1,96 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Secure Payment</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment</title>
+
+    <meta name="description" content="Secure payment for your courses.">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="canonical" href="https://psdeekshitha17-code.github.io/nodejs-seo/payment.html">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="payment-container">
+    <div class="payment-container">
 
-    <!-- LEFT CARD -->
-    <div class="payment-card">
+        <!-- LEFT CARD -->
+        <div class="payment-card">
 
-        <h2>💳 Payment</h2>
+            <h2>💳 Payment</h2>
 
-        <!-- USER DETAILS -->
-        <div class="form-group">
-            <input type="text" id="name" placeholder="Full Name">
+            <!-- USER DETAILS -->
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Full Name">
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email Address">
+            </div>
+
+            <!-- PAYMENT OPTIONS -->
+            <h3>Select Payment Method</h3>
+
+            <div class="pay-option" onclick="selectMethod('Google Pay')">
+                <img src="https://img.icons8.com/color/48/google-pay.png" />
+                <span>Google Pay</span>
+            </div>
+
+            <div class="pay-option" onclick="selectMethod('Paytm')">
+                <img src="https://img.icons8.com/color/48/paytm.png" />
+                <span>Paytm</span>
+            </div>
+
+            <div class="pay-option" onclick="selectMethod('UPI')">
+                <img src="https://img.icons8.com/color/48/bank.png" />
+                <span>UPI Payment</span>
+            </div>
+
+            <!-- TOTAL -->
+            <div class="total">
+                <h3>Total: ₹499</h3>
+            </div>
+
+            <!-- BUTTON -->
+            <button onclick="pay()" class="pay-btn-main">
+                confirm the pay
+            </button>
         </div>
 
-        <div class="form-group">
-            <input type="email" id="email" placeholder="Email Address">
-        </div>
-
-        <!-- PAYMENT OPTIONS -->
-        <h3>Select Payment Method</h3>
-
-        <div class="pay-option" onclick="selectMethod('Google Pay')">
-            <img src="https://img.icons8.com/color/48/google-pay.png"/>
-            <span>Google Pay</span>
-        </div>
-
-        <div class="pay-option" onclick="selectMethod('Paytm')">
-            <img src="https://img.icons8.com/color/48/paytm.png"/>
-            <span>Paytm</span>
-        </div>
-
-       <div class="pay-option" onclick="selectMethod('UPI')">
-            <img src="https://img.icons8.com/color/48/bank.png"/>
-            <span>UPI Payment</span>
-        </div>
-
-        <!-- TOTAL -->
-        <div class="total">
-            <h3>Total: ₹499</h3>
-        </div>
-
-        <!-- BUTTON -->
-        <button onclick="pay()" class="pay-btn-main">
-    confirm the pay
-</button>
     </div>
 
-</div>
+    <script>
 
-<script>
+        let selectedMethod = "";
 
-let selectedMethod = "";
+        function selectMethod(method) {
+            selectedMethod = method;
+        }
 
-function selectMethod(method){
-    selectedMethod = method;
-}
+        function pay() {
 
-function pay(){
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
+            if (name === "" || email === "") {
+                alert("Enter details");
+                return;
+            }
 
-    if(name === "" || email === ""){
-        alert("Enter details");
-        return;
-    }
+            if (selectedMethod === "") {
+                alert("Select payment method");
+                return;
+            }
 
-    if(selectedMethod === ""){
-        alert("Select payment method");
-        return;
-    }
+            localStorage.setItem("user", JSON.stringify({ name, email }));
 
-   localStorage.setItem("user", JSON.stringify({name, email}));
+            // clear cart after payment
+            localStorage.removeItem("cart");
 
-    // clear cart after payment
-    localStorage.removeItem("cart");
+            localStorage.setItem("purchased", "true");
 
-    localStorage.setItem("purchased", "true");
+            // redirect
+            window.location.href = "success.html";
 
-    // redirect
-    window.location.href = "success.html";
+        }
 
-}
-
-</script>
+    </script>
 
 </body>
+
 </html>

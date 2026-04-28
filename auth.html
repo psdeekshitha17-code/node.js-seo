@@ -1,62 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Login / Signup</title>
-<link rel="stylesheet" href="style.css">
+    <title>Login</title>
+
+    <meta name="description" content="Login to access your courses.">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="canonical" href="https://psdeekshitha17-code.github.io/nodejs-seo/auth.html">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="auth-box">
+    <div class="auth-box">
 
-<h2 id="title">Login</h2>
+        <h2 id="title">Login</h2>
 
-<input type="text" id="username" placeholder="Username">
-<input type="password" id="password" placeholder="Password">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
 
-<button class="btn" onclick="submitForm()">Submit</button>
+        <button class="btn" onclick="submitForm()">Submit</button>
 
-<p onclick="toggle()" style="cursor:pointer; color:blue;">
-Switch to Signup
-</p>
+        <p onclick="toggle()" style="cursor:pointer; color:blue;">
+            Switch to Signup
+        </p>
 
-</div>
+    </div>
 
-<script>
+    <script>
 
-let isLogin = true;
+        let isLogin = true;
 
-function toggle(){
-    isLogin = !isLogin;
-    document.getElementById("title").innerText = isLogin ? "Login" : "Signup";
-}
-
-function submitForm(){
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    if(user === "" || pass === ""){
-        alert("Fill all fields");
-        return;
-    }
-
-    if(isLogin){
-        let stored = JSON.parse(localStorage.getItem("userAuth"));
-
-        if(stored && stored.user === user && stored.pass === pass){
-            localStorage.setItem("loggedIn", "true");
-            window.location.href = "dashboard.html";
-        } else {
-            alert("Invalid login");
+        function toggle() {
+            isLogin = !isLogin;
+            document.getElementById("title").innerText = isLogin ? "Login" : "Signup";
         }
 
-    } else {
-        localStorage.setItem("userAuth", JSON.stringify({user, pass}));
-        alert("Signup success");
-    }
-}
+        function submitForm() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
 
-</script>
+            if (user === "" || pass === "") {
+                alert("Fill all fields");
+                return;
+            }
+
+            if (isLogin) {
+                let stored = JSON.parse(localStorage.getItem("userAuth"));
+
+                if (stored && stored.user === user && stored.pass === pass) {
+                    localStorage.setItem("loggedIn", "true");
+                    window.location.href = "dashboard.html";
+                } else {
+                    alert("Invalid login");
+                }
+
+            } else {
+                localStorage.setItem("userAuth", JSON.stringify({ user, pass }));
+                alert("Signup success");
+            }
+        }
+
+    </script>
 
 </body>
+
 </html>

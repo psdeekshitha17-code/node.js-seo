@@ -1,20 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-  <loc>http://localhost:5500/index.html</loc>
+<loc>https://psdeekshitha17-code.github.io/nodejs-seo/</loc>
 </url>
 
 <url>
-  <loc>http://localhost:5500/blog.html</loc>
+<loc>https://psdeekshitha17-code.github.io/nodejs-seo/blog.html</loc>
 </url>
 
 <url>
-  <loc>http://localhost:5500/blogs/blog1.html</loc>
+<loc>https://psdeekshitha17-code.github.io/nodejs-seo/courses.html</loc>
 </url>
 
 <url>
-  <loc>http://localhost:5500/blogs/blog2.html</loc>
+<loc>https://psdeekshitha17-code.github.io/nodejs-seo/about.html</loc>
 </url>
+
+<!-- BLOGS -->
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog1.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog2.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog3.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog4.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog5.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog6.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog7.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog8.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog9.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog10.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog11.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog12.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog13.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog14.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog15.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog16.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog17.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog18.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog19.html</loc></url>
+<url><loc>https://psdeekshitha17-code.github.io/nodejs-seo/blogs/blog20.html</loc></url>
 
 </urlset>
