@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Success</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="box" style="text-align:center">
+
+<h1>✅ Payment Successful</h1>
+
+<p id="user"></p>
+
+<p>Your course has been unlocked 🎉</p>
+
+<a href="courses.html" class="btn">Go Back</a>
+
+</div>
+
+</div>
+
+<script>
+
+let user = JSON.parse(localStorage.getItem("user"));
+
+if(user){
+    document.getElementById("user").innerText =
+    "Thank you " + user.name + " (" + user.email + ")";
+} else {
+    document.getElementById("user").innerText =
+    "Payment completed successfully";
+}
+
+</script>
+
+</body>
+</html>

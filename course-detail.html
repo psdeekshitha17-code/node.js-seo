@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Course Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>Node.js Guide</h2>
+        <a href="courses.html">Courses</a>
+        <a href="cart.html">Cart</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <div class="card">
+
+            <!-- DYNAMIC CONTENT -->
+            <h1 id="title"></h1>
+             <p id="lock-msg" style="color:red;"></p>
+            <h3>Course Content</h3>
+
+            <ul id="content"></ul>
+
+            <h2 id="price"></h2>
+
+            <button class="btn" onclick="addToCart()">Add to Cart 🛒</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+// GET PARAM (beginner / intermediate / advanced)
+const params = new URLSearchParams(window.location.search);
+const course = params.get("course");
+
+// COURSE DATA
+let data = {
+    beginner: {
+        title: "📘 Node.js Beginner Course",
+        price: 199,
+        topics: ["Introduction", "Installation", "Modules", "File System", "HTTP Server"]
+    },
+    intermediate: {
+        title: "🚀 Node.js Intermediate Course",
+        price: 299,
+        topics: ["Express.js", "Routing", "Middleware", "REST APIs"]
+    },
+    advanced: {
+        title: "🔥 Node.js Advanced Course",
+        price: 499,
+        topics: ["MongoDB", "JWT Auth", "Security", "Deployment"]
+    }
+};
+
+// SELECTED COURSE
+let selected = data[course];
+
+// SAFETY CHECK
+if (!selected) {
+    document.querySelector(".card").innerHTML = "<h2>Course not found</h2>";
+}
+
+// UPDATE UI
+document.getElementById("title").innerText = selected.title;
+document.getElementById("price").innerText = "₹" + selected.price;
+
+// ADD TOPICS
+let list = "";
+selected.topics.forEach(t => {
+    list += "<li>✔ " + t + "</li>";
+});
+document.getElementById("content").innerHTML = list;
+
+
+// ✅ ADD TO CART (MULTIPLE ITEMS FIX)
+function addToCart() {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push(selected);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Added to cart");
+
+    // optional redirect
+    window.location.href = "cart.html";
+}
+
+
+</script>
+
+</body>
+</html>

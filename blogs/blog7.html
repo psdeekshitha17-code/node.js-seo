@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>CREATING SERVER USING HTTP| Node.js Guide</title>
+    <meta name="description" content="Learn TOPIC NAME in Node.js with examples.">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Node.js Guide</h2>
+    </nav>
+    <div class="blog-container">
+
+        <div class="blog-header">
+            <h1>CREATING SERVER USING HTTP</h1>
+            <p class="subtitle">Intermediate Guide to Node.js fundamentals</p>
+        </div>
+        <h2>Overview</h2>
+        <p>
+            Node.js provides the HTTP module to create web servers easily.
+        </p>
+
+        <h2>Steps to Create Server</h2>
+        <ul>
+            <li>Import HTTP module</li>
+            <li>Create server</li>
+            <li>Listen on port</li>
+        </ul>
+
+        <h2>Example</h2>
+        <p>
+            const http = require('http');<br>
+            http.createServer((req, res) => {<br>
+            res.write("Hello World");<br>
+            res.end();<br>
+            }).listen(3000);
+        </p>
+
+        <h3>Conclusion</h3>
+        <p>
+            Node.js makes it easy to create lightweight servers.
+        </p>
+
+        <hr>
+        <a href="blog6.html">⬅ Previous</a>
+        <a href="blog8.html">➡ Next</a>
+
+        <a href="../downloads/blog7.pdf" download>📥 Download Notes</a>
+    </div>
+</body>
+
+</html>

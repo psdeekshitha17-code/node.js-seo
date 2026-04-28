@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Introduction to Node.js | Beginner Guide</title>
+
+    <meta name="description" content="Learn what Node.js is, its features and why it is used in backend development.">
+
+    <meta name="keywords" content="Node.js introduction, what is node js, backend javascript">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Node.js Guide</h2>
+        <button id="darkToggle">🌙</button>
+    </nav>
+    <div class="blog-container">
+
+        <div class="blog-header">
+            <h1>Introduction to Node.js</h1>
+            <p class="subtitle">Beginner Guide to Node.js fundamentals</p>
+        </div>
+
+        <h2>What is Node.js?</h2>
+        <p>
+            Node.js is a runtime environment that allows developers to run JavaScript outside the browser. It is built
+            on
+            Chrome's V8 JavaScript engine and is designed for building fast and scalable server-side applications.
+        </p>
+
+        <h2>Why Use Node.js?</h2>
+        <ul>
+            <li>High performance due to V8 engine</li>
+            <li>Non-blocking and asynchronous execution</li>
+            <li>Lightweight and efficient</li>
+            <li>Large ecosystem (npm packages)</li>
+        </ul>
+
+        <h2>Features of Node.js</h2>
+        <ul>
+            <li>Event-driven architecture</li>
+            <li>Single-threaded but highly scalable</li>
+            <li>Cross-platform support</li>
+            <li>Open-source and widely used</li>
+        </ul>
+
+        <h2>Applications of Node.js</h2>
+        <p>
+            Node.js is used in web servers, APIs, real-time applications like chat apps, streaming services, and more.
+        </p>
+        <h2>Example</h2>
+
+        <p>Below is a simple Node.js server example:</p>
+
+        <pre><code>
+const http = require('http');
+http.createServer((req,res)=>{
+  res.write("Hello World");
+  res.end();
+}).listen(3000);
+</code></pre>
+
+        <h3>Conclusion</h3>
+        <p>
+            Node.js is a powerful tool for backend development and is widely used in modern web applications.
+        </p>
+
+        <hr>
+
+        <a href="blog2.html">➡ Next: Installing Node.js</a>
+
+        <a href="../downloads/blog1.pdf" download>📥 Download Notes</a>
+    </div>
+</body>
+
+</html>

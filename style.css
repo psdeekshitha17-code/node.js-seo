@@ -1,0 +1,602 @@
+/* RESET */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef2f7;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #1e1e2f, #2c2c54);
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #4CAF50;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #388E3C;
+}
+
+/* SEARCH */
+#search {
+    width: 60%;
+    padding: 12px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* GRID BLOG CARDS */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-left: 5px solid #4CAF50;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* BLOG PAGE */
+.blog-container {
+    max-width: 850px;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.blog-container h1 {
+    font-size: 32px;
+}
+
+.blog-container h2 {
+    margin-top: 25px;
+    border-left: 4px solid #4CAF50;
+    padding-left: 10px;
+}
+
+.blog-container p {
+    color: #444;
+    line-height: 1.7;
+}
+
+pre {
+    background: #1e1e2f;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* ===== APP UI (NEW) ===== */
+
+/* Layout */
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    background: white;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* Content Card */
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Cart Page */
+.cart-box {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* ===== PAYMENT UI (UPGRADED) ===== */
+
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Payment card */
+.payment-box {
+    width: 320px;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.payment-box h2 {
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.payment-box input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Payment buttons */
+.pay-btn {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* SUCCESS PAGE */
+.success-page {
+    background: #2d8cf0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.success-box {
+    background: transparent;
+}
+
+.success-box h1 {
+    font-size: 60px;
+}
+
+/* PAYMENT PAGE UI */
+.payment-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+}
+
+/* CARD */
+.payment-card {
+    width: 350px;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+/* INPUT */
+.form-group input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+}
+
+/* PAYMENT OPTIONS */
+.pay-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #f7f7f7;
+    transition: 0.3s;
+}
+
+.pay-option img {
+    width: 30px;
+}
+
+.pay-option:hover {
+    background: #e8f5e9;
+    transform: scale(1.02);
+}
+
+/* TOTAL */
+.total {
+    margin: 15px 0;
+}
+
+/* BUTTON */
+.pay-btn-main {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #4CAF50, #00c853);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pay-btn-main:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+
+/* SUCCESS PAGE */
+.success-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.success-card {
+    width: 320px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+/* CHECK ICON */
+.success-icon {
+    width: 70px;
+    height: 70px;
+    background: #4CAF50;
+    color: white;
+    font-size: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+/* TEXT */
+.sub-text {
+    color: gray;
+    margin: 10px 0 20px;
+}
+
+/* BUTTON */
+.success-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.success-btn:hover {
+    background: #388E3C;
+}
+
+.home-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px;
+}
+
+.home-card {
+    width: 250px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.home-card:hover {
+    transform: translateY(-8px);
+}
+
+.cart-box {
+    width: 350px;
+    margin: 80px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.course-detail {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.price-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.cart-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.cart-card:hover {
+    transform: translateY(-4px);
+}
+
+.remove-btn {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.payment-box {
+    width: 320px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.payment-box input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.pay-option {
+    background: #f5f5f5;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pay-option:hover {
+    background: #e0f2f1;
+}
+
+.auth-box {
+    width: 300px;
+    margin: 100px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+}
+.auth-box input {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background: #1e1e2f;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    margin: 15px 0;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+
+/* DOWNLOAD BUTTON (applies to all blogs automatically) */
+a[download] {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #00c853, #4CAF50);
+    color: white !important;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+a[download]:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #00b34a, #388E3C);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Optional: add icon spacing */
+a[download]::before {
+    content: "⬇ ";
+    margin-right: 5px;
+}
+
+/* ABOUT PAGE */
+.about-container {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.about-text {
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.about-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    width: 250px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
