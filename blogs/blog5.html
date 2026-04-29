@@ -43,41 +43,138 @@
             <p class="subtitle">Beginner Guide to Node.js fundamentals</p>
         </div>
 
-        <h2>Overview</h2>
         <p>
-            Node.js provides the fs (File System) module to work with files and directories.
+            The File System (fs) module in Node.js allows developers to interact with the file system of the computer.
+            It provides methods to read, write, update, delete, and manage files. This module is one of the most
+            important core modules in Node.js and is widely used in backend development.
         </p>
 
-        <h2>Common Operations</h2>
+        <p>
+            Using the File System module, applications can store data, read configuration files, and manage user
+            uploads. Node.js provides both synchronous and asynchronous methods to perform file operations.
+        </p>
+
+
+        ---
+
+        <h2>Importing File System Module</h2>
+
+        <p>
+            To use the file system module, we need to import it using require():
+        </p>
+
+        <pre>
+const fs = require('fs');
+</pre>
+
+        ---
+
+        <h2>Reading Files</h2>
+
+        <p>
+            Node.js allows reading files asynchronously, which is more efficient.
+        </p>
+
+        <pre>
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+    if (err) throw err;
+    console.log(data);
+});
+</pre>
+
+        <p>
+            This method reads the file without blocking other operations.
+        </p>
+
+        ---
+
+        <h2>Writing Files</h2>
+
+        <p>
+            We can create or overwrite files using writeFile():
+        </p>
+
+        <pre>
+fs.writeFile('file.txt', 'Hello Node.js', (err) => {
+    if (err) throw err;
+    console.log("File created");
+});
+</pre>
+
+        ---
+
+        <h2>Appending Data</h2>
+
+        <p>
+            To add data without overwriting:
+        </p>
+
+        <pre>
+fs.appendFile('file.txt', '\nNew Data', (err) => {
+    if (err) throw err;
+});
+</pre>
+
+        ---
+
+        <h2>Deleting Files</h2>
+
+        <pre>
+fs.unlink('file.txt', (err) => {
+    if (err) throw err;
+    console.log("File deleted");
+});
+</pre>
+
+        ---
+
+        <h2>Synchronous vs Asynchronous</h2>
+
+        <p>
+            Node.js provides two types of methods:
+        </p>
+
         <ul>
-            <li>Reading files</li>
-            <li>Writing files</li>
-            <li>Deleting files</li>
-            <li>Updating files</li>
+            <li><strong>Synchronous:</strong> Blocks execution until task completes</li>
+            <li><strong>Asynchronous:</strong> Executes without blocking</li>
         </ul>
 
-        <h2>Example</h2>
-        <p>
-            fs.readFile('file.txt', (err, data) => {<br>
-            &nbsp;&nbsp;if (err) throw err;<br>
-            &nbsp;&nbsp;console.log(data);<br>
-            });
-        </p>
+        <pre>
+fs.readFileSync('file.txt', 'utf8');
+</pre>
 
-        <h2>Advantages</h2>
+        ---
+
+        <h2>Advantages of File System Module</h2>
+
         <ul>
-            <li>Efficient file handling</li>
+            <li>Easy file handling</li>
             <li>Supports async operations</li>
-            <li>Easy to use</li>
+            <li>Efficient for large applications</li>
+            <li>Works on all platforms</li>
         </ul>
 
-        <h3>Conclusion</h3>
+        ---
+
+        <h2>Real-world Applications</h2>
+
+        <ul>
+            <li>Reading configuration files</li>
+            <li>Handling uploads</li>
+            <li>Logging system data</li>
+            <li>Storing user information</li>
+        </ul>
+
+        ---
+
+        <h2>Conclusion</h2>
+
         <p>
-            The fs module is essential for handling files in backend applications.
-        </p>
-        <h3>Conclusion</h3>
-        <p>
-            File system module is essential for backend operations.
+            The File System module is an essential part of Node.js. It allows developers to interact with files and
+            directories efficiently. Understanding file handling is important for building real-world applications such
+            as servers, APIs, and data-driven systems.
         </p>
 
         <hr>

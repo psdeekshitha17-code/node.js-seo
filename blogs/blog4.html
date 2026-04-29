@@ -43,40 +43,171 @@
             <p class="subtitle">Beginner Guide to Node.js fundamentals</p>
         </div>
 
-        <h2>Overview</h2>
         <p>
-            Modules are reusable pieces of code that help organize applications in Node.js.
+            Node.js modules are reusable blocks of code that help developers organize their applications into smaller,
+            manageable parts. Instead of writing all code in a single file, modules allow you to separate functionality
+            into different files and reuse them whenever needed.
         </p>
 
-        <h2>Types of Modules</h2>
+        <p>
+            Node.js comes with many built-in modules such as HTTP, File System, Path, and Events. Developers can also
+            create their own modules or use third-party modules from npm.
+        </p>
+
+        ---
+
+        <h2>Types of Modules in Node.js</h2>
+
+        <p>Node.js supports three types of modules:</p>
+
         <ul>
-            <li>Built-in modules (fs, http)</li>
-            <li>User-defined modules</li>
-            <li>Third-party modules (npm packages)</li>
+            <li><strong>Core Modules:</strong> Built-in modules provided by Node.js (e.g., HTTP, FS)</li>
+            <li><strong>Local Modules:</strong> Custom modules created by developers</li>
+            <li><strong>Third-party Modules:</strong> Installed using npm (e.g., Express)</li>
         </ul>
 
-        <h2>Using Modules</h2>
+        ---
+
+        <h2>Core Modules Example</h2>
+
         <p>
-            Modules are imported using the require() function.
+            Core modules are included with Node.js, so you don't need to install them separately.
         </p>
 
-        <h2>Example</h2>
+        <pre>
+const http = require('http');
+
+http.createServer((req, res) => {
+    res.write("Hello from core module");
+    res.end();
+}).listen(3000);
+</pre>
+
         <p>
-            const fs = require('fs');<br>
-            fs.readFile('file.txt', callback);
+            In this example, the HTTP module is used to create a simple web server.
         </p>
 
-        <h2>Advantages</h2>
+        ---
+
+        <h2>Local Modules Example</h2>
+
+        <p>
+            Developers can create their own modules to reuse code.
+        </p>
+
+        <h3>Step 1: Create a file (math.js)</h3>
+
+        <pre>
+exports.add = function(a, b) {
+    return a + b;
+};
+</pre>
+
+        <h3>Step 2: Use it in another file</h3>
+
+        <pre>
+const math = require('./math');
+
+console.log(math.add(5, 3));
+</pre>
+
+        <p>
+            This allows you to separate logic into different files and reuse it easily.
+        </p>
+
+        ---
+
+        <h2>Third-party Modules</h2>
+
+        <p>
+            Third-party modules are installed using npm and provide additional functionality.
+        </p>
+
+        <pre>
+npm install express
+</pre>
+
+        <p>
+            Example using Express:
+        </p>
+
+        <pre>
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send("Hello from Express");
+});
+
+app.listen(3000);
+</pre>
+
+        ---
+
+        <!-- WORKING IMAGE -->
+        <img src="https://www.tutorialspoint.com/nodejs/images/nodejs_modules.jpg" alt="Node.js modules working"
+            width="500">
+
+        ---
+
+        <h2>Why Modules are Important</h2>
+
         <ul>
-            <li>Code reusability</li>
-            <li>Better organization</li>
-            <li>Easy maintenance</li>
+            <li>Improves code organization</li>
+            <li>Promotes reusability</li>
+            <li>Makes debugging easier</li>
+            <li>Reduces code duplication</li>
         </ul>
 
-        <h3>Conclusion</h3>
+        ---
+
+        <h2>How require() Works</h2>
+
         <p>
-            Modules simplify development and improve code structure.
+            The require() function is used to include modules in Node.js. It loads the module and makes its
+            functionality available for use in another file.
         </p>
+
+        <pre>
+const fs = require('fs');
+</pre>
+
+        <p>
+            Here, the File System module is imported and can be used to work with files.
+        </p>
+
+        ---
+
+        <h2>Module Exporting Methods</h2>
+
+        <p>
+            Node.js provides different ways to export modules:
+        </p>
+
+        <ul>
+            <li>exports</li>
+            <li>module.exports</li>
+        </ul>
+
+        <h3>Example:</h3>
+
+        <pre>
+module.exports = function() {
+    console.log("Hello Module");
+};
+</pre>
+
+        ---
+
+        <h2>Conclusion</h2>
+
+        <p>
+            Modules are one of the most important features of Node.js. They allow developers to structure applications
+            efficiently and reuse code across multiple files. By using modules, developers can build scalable and
+            maintainable applications.
+        </p>
+
+
 
         <hr>
 

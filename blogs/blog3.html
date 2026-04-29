@@ -43,40 +43,116 @@
             <p class="subtitle">Beginner Guide to Node.js fundamentals</p>
         </div>
 
-        <h2>Overview</h2>
         <p>
-            Node.js follows a single-threaded, event-driven architecture that allows it to handle multiple client
-            requests
-            efficiently. It uses an event loop to perform non-blocking operations.
+            Node.js architecture is designed to handle multiple client requests efficiently using a single-threaded,
+            event-driven model. Unlike traditional server architectures that create a new thread for each request,
+            Node.js uses a single main thread and handles multiple requests asynchronously. This makes it lightweight,
+            fast, and highly scalable for modern applications.
         </p>
 
-        <h2>Key Components</h2>
+        <!-- IMAGE (WORKING) -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+            alt="Node.js architecture overview" width="200">
+
+        ---
+
+        <h2>How Node.js Architecture Works</h2>
+
+        <p>
+            Node.js follows a non-blocking I/O model, which means it does not wait for operations like file reading or
+            database queries to complete before moving to the next task. Instead, it uses callbacks, promises, or
+            async/await to handle operations in the background.
+        </p>
+
+        <p>
+            When a client sends a request, Node.js processes it using an event loop. If the request requires heavy
+            processing, it is assigned to a worker thread, and Node.js continues to handle other requests.
+        </p>
+
+        ---
+
+        <h2>Key Components of Node.js Architecture</h2>
+
         <ul>
-            <li>Event Loop</li>
-            <li>Callback Queue</li>
-            <li>Thread Pool</li>
-            <li>V8 Engine</li>
+            <li><strong>Event Loop:</strong> Continuously checks for tasks and executes them.</li>
+            <li><strong>Callback Queue:</strong> Stores completed tasks waiting to be executed.</li>
+            <li><strong>Thread Pool:</strong> Handles heavy operations like file access.</li>
+            <li><strong>Event Queue:</strong> Manages incoming client requests.</li>
         </ul>
 
-        <h2>How Node.js Works</h2>
+        ---
+
+        <h2>Working Flow of Node.js</h2>
+
         <p>
-            When a request is received, Node.js processes it using the event loop. Instead of waiting for tasks like
-            file
-            reading or database access, it moves to the next request and handles the response asynchronously.
+            1. Client sends a request to the server
+            2. Request is added to the event queue
+            3. Event loop processes the request
+            4. If I/O operation is needed, it is sent to thread pool
+            5. Response is returned to client after completion
         </p>
 
-        <h2>Advantages</h2>
+        ---
+
+        <h2>Example of Asynchronous Execution</h2>
+
+        <pre>
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Processing...");
+}, 2000);
+
+console.log("End");
+</pre>
+
+        <p>
+            Output:
+        </p>
+
+        <pre>
+Start
+End
+Processing...
+</pre>
+
+        <p>
+            This shows that Node.js does not wait for the timeout function and continues execution.
+        </p>
+
+        ---
+
+        <h2>Advantages of Node.js Architecture</h2>
+
         <ul>
             <li>Handles multiple requests efficiently</li>
-            <li>Faster execution</li>
-            <li>Scalable architecture</li>
+            <li>Faster performance due to non-blocking I/O</li>
+            <li>Uses fewer system resources</li>
+            <li>Highly scalable</li>
         </ul>
 
-        <h3>Conclusion</h3>
+        ---
+
+        <h2>Real-world Use Cases</h2>
+
+        <ul>
+            <li>Chat applications</li>
+            <li>Online streaming platforms</li>
+            <li>Real-time data applications</li>
+            <li>REST API servers</li>
+        </ul>
+
+        ---
+
+        <h2>Conclusion</h2>
+
         <p>
-            Node.js architecture makes it suitable for real-time and high-performance applications.
+            Node.js architecture is one of the key reasons behind its popularity. Its event-driven, non-blocking model
+            makes it ideal for building high-performance applications. Understanding how Node.js works internally helps
+            developers build efficient and scalable systems.
         </p>
-        <hr>
+
+
 
         <a href="blog2.html">⬅ Previous</a>
         <a href="blog4.html">➡ Next</a>

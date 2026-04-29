@@ -42,43 +42,161 @@
             <h1>Installing Node.js</h1>
             <p class="subtitle">Beginner Guide to Node.js fundamentals</p>
         </div>
+        <p>
+            Node.js is a powerful runtime environment used to execute JavaScript outside the browser. Before developing
+            applications using Node.js, it is necessary to properly install it on your system. The installation process
+            is simple and can be done on different operating systems such as Windows, macOS, and Linux. Node.js comes
+            bundled with npm (Node Package Manager), which allows developers to install external libraries and packages
+            easily.
+        </p>
 
-        <h2>Steps to Install Node.js</h2>
+        <img src="https://nodejs.org/static/images/logo.svg" alt="Node.js Logo" width="200">
+
+        ---
+
+        <h2>System Requirements</h2>
+
+        <p>
+            Before installing Node.js, ensure your system meets the following requirements:
+        </p>
+
+        <ul>
+            <li>A modern operating system (Windows, macOS, or Linux)</li>
+            <li>Minimum 2GB RAM recommended</li>
+            <li>Internet connection for downloading packages</li>
+            <li>Basic knowledge of command line</li>
+        </ul>
+
+        ---
+
+        <h2>Steps to Install Node.js (Windows)</h2>
+
+        <p>
+            Follow the steps below to install Node.js on Windows:
+        </p>
+
         <ol>
-            <li>Visit the official Node.js website</li>
-            <li>Download the latest version</li>
-            <li>Run the installer</li>
-            <li>Follow setup instructions</li>
+            <li>Go to the official Node.js website: <a href="https://nodejs.org">https://nodejs.org</a></li>
+            <li>Download the LTS (Long Term Support) version</li>
+            <li>Run the installer file (.msi)</li>
+            <li>Click "Next" and accept license agreement</li>
+            <li>Select installation path</li>
+            <li>Click "Install"</li>
+            <li>Wait for installation to complete</li>
         </ol>
 
-        <h2>Verify Installation</h2>
+
+        ---
+
+        <h2>Steps to Install Node.js (macOS)</h2>
+
         <p>
-            After installation, open command prompt and type:
+            On macOS, Node.js can be installed using the official package or Homebrew:
         </p>
 
-        <p>node -v</p>
-        <p>npm -v</p>
+        <pre>
+brew install node
+</pre>
 
-        <h2>Understanding npm</h2>
         <p>
-            npm (Node Package Manager) is used to install libraries and dependencies in Node.js projects.
+            After installation, verify using terminal commands.
         </p>
 
-        <h2>Example</h2>
+        ---
+
+        <h2>Steps to Install Node.js (Linux)</h2>
+
         <p>
-            To install a package:
+            On Linux systems, Node.js can be installed using package managers:
         </p>
-        <p>npm install express</p>
 
-        <h3>Conclusion</h3>
+        <pre>
+sudo apt update
+sudo apt install nodejs npm
+</pre>
+
+        ---
+
+        <h2>Verifying Installation</h2>
+
         <p>
-            Installing Node.js is simple and it comes with npm for managing packages.
+            After installing Node.js, it is important to verify whether it is installed correctly. Open your command
+            prompt or terminal and run the following commands:
         </p>
-        <hr>
 
-        <a href="blog1.html">⬅ Previous: Introduction</a>
+        <pre>
+node -v
+npm -v
+</pre>
 
-        <a href="../downloads/blog2.pdf" download>📥 Download Notes</a>
+        <p>
+            If version numbers are displayed, it means Node.js and npm are successfully installed.
+        </p>
+
+        ---
+
+        <h2>Understanding npm (Node Package Manager)</h2>
+
+        <p>
+            npm is an essential part of Node.js. It allows developers to install third-party libraries and frameworks
+            easily. npm contains thousands of packages that help in building applications faster.
+        </p>
+
+        <p>
+            Example of installing a package:
+        </p>
+
+        <pre>
+npm install express
+</pre>
+
+        <p>
+            This command installs Express.js, a popular framework used for building web applications.
+        </p>
+
+        ---
+
+        <h2>Advantages of Installing Node.js</h2>
+
+        <ul>
+            <li>Enables backend development using JavaScript</li>
+            <li>Access to thousands of npm packages</li>
+            <li>Easy setup and installation</li>
+            <li>Cross-platform support</li>
+        </ul>
+
+        ---
+
+        <h2>Common Issues During Installation</h2>
+
+        <p>
+            Sometimes users may face issues such as:
+        </p>
+
+        <ul>
+            <li>Path not set correctly</li>
+            <li>Version conflicts</li>
+            <li>Permission errors in Linux</li>
+        </ul>
+
+        <p>
+            These issues can be resolved by reinstalling Node.js or setting environment variables correctly.
+        </p>
+
+        ---
+
+        <h2>Conclusion</h2>
+
+        <p>
+            Installing Node.js is the first step toward building powerful backend applications. It provides a complete
+            environment for developing scalable and efficient applications. With npm support, developers can easily
+            enhance their applications using external libraries. Once installed, Node.js opens the door to modern web
+            development.
+            <hr>
+
+            <a href="blog1.html">⬅ Previous: Introduction</a>
+
+            <a href="../downloads/blog2.pdf" download>📥 Download Notes</a>
     </div>
 </body>
 
